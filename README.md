@@ -1,99 +1,45 @@
-# cpp-arduino-project
-Arduino projects and code from course exercises, learning on embedded systems
-Here’s an updated and more relevant version of the README for your course and tools based on the technology you’ve mentioned (using the Arduino Cloud platform, Autodesk Fusion 360, and other tools). This version reflects only the tools you are currently using:
+# **Basic LED Blink Setup with 220Ω Resistor for Initial Circuit Testing**
+
+## **Project Overview**
+This project demonstrates a simple **LED blink circuit** using an **Arduino Uno R3** and a **220Ω resistor** to ensure safe current flow through the LED. The project was carried out using **Arduino Cloud**, **Arduino Web Editor**, **Tinkercad**, and the **Elegoo Uno R3** kit for physical testing. This project serves as an initial circuit test to ensure proper setup, component connection, and code execution.
+
+![Combined Simulation Side by Side](/media/combined_simulation_sidebyside.gif)
 
 ---
 
-### Repository Name: **Arduino-Course-Projects**
-
-#### Repository Description:
-This repository contains all code and exercises from the Arduino course. Projects are developed using the Arduino Cloud platform and Autodesk Fusion 360 for simulation, without physical hardware. All sketches and libraries used in the course are organized for easy reference and reuse.
-
----
-
-#### README.md Content (Relevant to the Course & Tech):
-
-# Arduino-Course-Projects
-
-This repository is a collection of all Arduino sketches and course exercises developed using the Arduino Cloud platform. The course focuses on learning Arduino programming through cloud-based tools and simulations. No physical hardware is required for most exercises.
-
-## Course Overview
-- Tools used: Arduino Cloud, Autodesk Fusion 360, Arduino Web Editor.
-- Projects: Simple sketches, IoT-based simulations, and other projects.
-- All examples are created with cloud-based resources provided by the course.
-
-## Structure
-
-- `/src/` : Contains all Arduino sketches (in `.ino` format).
-- `/libraries/` : Libraries included or required by each project.
-- `/docs/` : Documentation or course-related notes.
-- `/examples/` : Course-specific examples such as the Blink LED.
-
-## Initial Project
-
-### Blink LED Example
-
-**Description**: This sketch blinks the built-in LED on the virtual Arduino Uno board in the cloud editor.
-
-**How to Run**: 
-1. Open Arduino Web Editor in the cloud.
-2. Compile and upload the Blink sketch to simulate the LED behavior.
-3. No physical board is required.
-
-**Code Structure**: 
-```cpp
-void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);  // Configure pin for LED
-}
-
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // Turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // Wait for 1 second
-  digitalWrite(LED_BUILTIN, LOW);    // Turn the LED off by making the voltage LOW
-  delay(1000);                       // Wait for 1 second
-}
-```
-
-## How to Use This Repository
-
-### Workflow:
-1. **Arduino Cloud Setup**: 
-   - Log into [Arduino Cloud](https://app.arduino.cc/).
-   - Access your cloud projects via [Arduino Sketches](https://app.arduino.cc/sketches/).
-   
-2. **Autodesk Fusion 360**: 
-   - Use Autodesk Fusion 360 for simulations if necessary.
-   - Export designs or results from Fusion 360 and store them under the `/docs` or `/projects` folder.
-   
-3. **Organizing Code**:
-   - Store your course-related code in `/src/` for easy access.
-   - Example sketches (like Blink) should be saved under `/examples/` with the file structure.
-
-## Tools Used
-
-- **Arduino Web Editor**: To write and upload code directly in the cloud.
-- **Arduino Cloud**: For project management and storing sketches.
-- **Autodesk Fusion 360**: Used for any CAD design or hardware simulations related to the course.
+## **Hardware Components**
+1. **Arduino Uno R3** (Elegoo)
+2. **Breadboard**
+3. **LED (Red)**
+4. **220Ω Resistor** (Current Limiting Resistor)
+5. **Connecting Wires**
+   - Black Wire (GND)
+   - Green Wire (Signal to Pin 13)
 
 ---
 
-#### Directory Structure:
-
-```
-```
-/sketches
-    Blink.ino
-    OtherProject.ino
-README.md
-
-```
+## **Tools and Platforms Used**
+- **Arduino Cloud & Arduino Web Editor**: Used to write and upload the blink sketch.
+- **Tinkercad**: Used for simulating the circuit before building the physical setup.
+- **Elegoo Uno R3**: Arduino-compatible microcontroller used for the physical test.
+- **macOS with USB-C to USB-A Adapter**: Used to connect the Arduino board to the computer for programming.
 
 ---
 
-#### Why No Tinkercad Mentioned:
-Since you’re not using Tinkercad, I’ve removed any references to it and made sure to focus only on the tools you've mentioned: Arduino Cloud and Autodesk Fusion 360.
+## **Circuit Setup**
 
-#### GitHub Integration:
-You can use GitHub as a backup for source control, but the integration can be manual, meaning you upload your code from the cloud editor to this repository for tracking your progress.
+1. **LED Connections**:
+   - **Anode (long leg)**: Connected to **E12** on the breadboard.
+   - **Cathode (short leg)**: Shared with **E13** on the breadboard and connected to the **GND** of the Arduino using a **black wire**.
 
-This README is now specifically relevant to your current tools and learning platform!
+2. **Resistor (220Ω)**:
+   - One leg in **D12** (shared with the anode).
+   - The other leg in **D1** on the breadboard.
+
+3. **Green Signal Wire**:
+   - Connect from **D1** on the breadboard to **Digital Pin 13** on the Arduino to control the LED.
+
+---
+
+## **Code Explanation**
+This is a simple **Blink** sketch that blinks an external LED connected to **pin 13** of the Arduino.
