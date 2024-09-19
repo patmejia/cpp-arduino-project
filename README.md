@@ -1,27 +1,36 @@
 # **Basic LED Blink Setup with 220Ω Resistor for Initial Circuit Testing**
 
 ## **Project Overview**
-This project demonstrates a simple **LED blink circuit** using an **Arduino Uno R3** and a **220Ω resistor** to ensure safe current flow through the LED. It was completed using **Arduino Cloud**, **Arduino Web Editor**, **Tinkercad**, and the **Elegoo Uno R3** kit for physical testing. This serves as an initial circuit test for proper setup, connections, and code execution.
+This project demonstrates a simple **LED blink circuit** using an **Arduino Uno R3** and a **220Ω resistor** to ensure safe current flow through the LED. It was completed using **Arduino Cloud**, **Arduino Web Editor**, **Tinkercad**, and the **Elegoo Uno R3** kit for physical testing. This serves as an initial circuit test to verify proper component connections, circuit layout, and code execution.
+
 
 ![Combined Simulation Side by Side](/media/combined_simulation_sidebyside.gif)
+*Side-by-side view of the LED blink circuit simulation in Tinkercad and physical setup with the Elegoo Uno R3 board.*
 
 ---
 
 ## **Hardware Components**
-1. **Arduino Uno R3** (Elegoo)
+1. **Elegoo Uno R3** (Arduino-compatible, **ATmega328P** and **ATmega16U2** for USB communication)
 2. **Breadboard**
 3. **LED (Red)**
 4. **220Ω Resistor** (Current Limiting Resistor)
-5. **Connecting Wires**
+5. **Connecting Wires**:
    - Black Wire (GND)
    - Green Wire (Signal to Pin 13)
 
 ---
 
+**Elegoo Uno R3 Board**:
+
+![Elegoo Uno R3](media/elegoo_uno_r3.png)
+*Elegoo Uno R3 board based on the ATmega328P microcontroller. Learn more about it [here](https://www.elegoo.com/products/elegoo-uno-r3-board/).*
+
+---
+
 ## **Tools and Platforms Used**
-- **Arduino Cloud & Arduino Web Editor**: To write and upload the blink sketch.
+- **Arduino Cloud & Arduino Web Editor**: For writing and uploading the blink sketch.
 - **Tinkercad**: For simulating the circuit before building the physical setup.
-- **Elegoo Uno R3**: Arduino-compatible board used for testing.
+- **Elegoo Uno R3**: Arduino-compatible board used for physical testing.
 - **macOS with USB-C to USB-A Adapter**: For connecting the Arduino board to the computer.
 
 ---
@@ -29,8 +38,8 @@ This project demonstrates a simple **LED blink circuit** using an **Arduino Uno 
 ## **Circuit Setup**
 
 1. **LED Connections**:
-   - **Anode (long leg)**: Connected to **E12** on the breadboard.
-   - **Cathode (short leg)**: Shared with **E13** on the breadboard and connected to **GND** using a **black wire**.
+   - **Anode (long leg)**: Inserted into **E12** on the breadboard.
+   - **Cathode (short leg)**: Shared with **E13** on the breadboard, connected to **GND** via a **black wire**.
 
 2. **Resistor (220Ω)**:
    - One leg in **D12** (shared with the anode).
@@ -42,7 +51,7 @@ This project demonstrates a simple **LED blink circuit** using an **Arduino Uno 
 ---
 
 ## **Code Explanation**
-This is a simple **Blink** sketch that blinks an external LED connected to **pin 13**.
+This is a basic **Blink** sketch that blinks an external LED connected to **pin 13** on the Elegoo Uno R3.
 
 ```cpp
 // Filename: Blink_LED
@@ -69,55 +78,51 @@ void loop() {
 
 ### **Why 220Ω Resistor?**
 
-The 220Ω resistor limits current through the LED to prevent damage. Using **Ohm’s Law**, it ensures the LED runs safely at 5V from the Arduino:
+The 220Ω resistor limits the current flowing through the LED to prevent it from burning out. Using **Ohm’s Law**, we ensure the LED operates safely with the 5V supply from the Arduino:
 
-\[
+$$
 R = \frac{V_{supply} - V_{LED}}{I}
-\]
+$$
 
 Where:
-- \( V_{supply} = 5V \)
-- \( V_{LED} = 2V \)
-- \( I = 20mA \)
+- $V_{supply} = 5V$ (Arduino's output voltage)
+- $V_{LED} = 2V$ (forward voltage drop across the LED)
+- $I = 20mA$ (safe current for most LEDs)
 
-\[
+$$
 R = \frac{5V - 2V}{0.02A} = 150\Omega
-\]
+$$
 
-A 150Ω resistor would work, but **220Ω** provides a safety margin to protect the LED.
+Although 150Ω is calculated, **220Ω** is commonly used to provide a safety margin, ensuring the current stays well within safe limits for the LED.
 
 ---
 
-## **Best Practices: Simulation to PCB**
-When moving from **simulation** to **PCB**, follow best practices:
+## **Best Practices: From Simulation to PCB**
 
-- **Component Placement**: Optimize layout to reduce interference and power loss.
-- **Connections**: Match wiring from simulation, ensuring firm physical connections.
-- **Testing**: Prototype on breadboard before finalizing PCB design.
+When moving from a **simulation** (e.g., Tinkercad) to a **printed circuit board (PCB)**, it's essential to follow best practices:
+
+- **Component Placement**: Optimize layout to minimize signal interference and power loss.
+- **Connections**: Follow simulation wiring carefully, ensuring solid physical connections.
+- **Testing**: Always prototype on a breadboard before committing to PCB design to avoid costly errors.
 
 ---
 
 ## **How to Use**
 1. **Tinkercad**:
-   - Build the circuit as described and simulate the LED blink.
-   - Upload the code using Tinkercad’s editor.
-   
+   - Build the circuit in **Tinkercad** and simulate the LED blink.
+   - Upload the code using Tinkercad’s built-in code editor.
+
 2. **Arduino Web Editor (Cloud)**:
    - Copy the provided code into a new sketch.
-   - Connect your **Elegoo Uno R3** to your macOS via USB.
-   - Upload the sketch and verify that the LED blinks.
+   - Connect your **Elegoo Uno R3** to macOS using a USB cable.
+   - Upload the sketch and verify the LED blinks on the physical board.
 
 ---
 
 ## **Troubleshooting**
 - **LED Not Blinking**:
-  - Check wiring, especially the GND and pin 13 connections.
+  - Double-check the wiring, especially GND and pin 13 connections.
   - Ensure the resistor is in place to protect the LED.
-  - Verify successful code upload in the console.
+  - Confirm that the code was successfully uploaded by checking the console for errors.
 
 ---
-
-## **Conclusion**
-This project demonstrates a basic **LED blink setup** using both simulation and physical hardware. It highlights the importance of resistors for safe current control and provides hands-on experience in working with **Arduino** circuits.
-
---- 
