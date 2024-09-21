@@ -20,18 +20,18 @@ This project demonstrates a simple **LED blink circuit** using an **Arduino Uno 
 
 ---
 
-**Elegoo Uno R3 Board**:
-
-![Elegoo Uno R3](media/elegoo_uno_r3.png)
-*Elegoo Uno R3 board based on the ATmega328P microcontroller. Learn more about it [here](https://www.elegoo.com/products/elegoo-uno-r3-board/).*
-
----
-
 ## **Tools and Platforms Used**
 - **Arduino Cloud & Arduino Web Editor**: For writing and uploading the blink sketch.
 - **Tinkercad**: For simulating the circuit before building the physical setup.
 - **Elegoo Uno R3**: Arduino-compatible board used for physical testing.
 - **macOS with USB-C to USB-A Adapter**: For connecting the Arduino board to the computer.
+
+---
+
+**Elegoo Uno R3 Board**:
+
+![Elegoo Uno R3](media/elegoo_uno_r3.png)
+*Elegoo Uno R3 board based on the ATmega328P microcontroller. Learn more about it [here](https://www.elegoo.com/products/elegoo-uno-r3-board/).*
 
 ---
 
@@ -114,7 +114,7 @@ When moving from a **simulation** (e.g., Tinkercad) to a **printed circuit board
 
 2. **Arduino Web Editor (Cloud)**:
    - Copy the provided code into a new sketch.
-   - Connect your **Elegoo Uno R3** to macOS using a USB cable.
+   - Connect your **Elegoo Uno R3** to **macOS** using a USB cable.
    - Upload the sketch and verify the LED blinks on the physical board.
 
 ---
