@@ -5,6 +5,7 @@
 | Arduino Uno R3 | Elegoo version |
 | Resistor | 220 ohm |
 | LED | Red |
-| Breadboard | - |
+| Breadboard | Generic 63-hole |
 | Wires | Green (signal), Black (ground) |
 | USB cable | Type A to B |
+| Computer | macOS |
