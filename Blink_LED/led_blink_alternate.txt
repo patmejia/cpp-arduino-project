@@ -1,0 +1,26 @@
+const int ledPin = 13;        // Built-in LED pin
+const int fastDelay = 500;    // Fast blink: 0.5s total
+const int slowDelay = 2000;   // Slow blink: 2s total
+const int blinkCount = 5;     // Blinks per set
+const int setSeparation = 1000;  // Delay between sets
+
+void setup() {
+  pinMode(ledPin, OUTPUT);    // Set pin as output
+}
+
+// Blink LED 'count' times with 'delayTime' on/off.
+void blinkLED(int delayTime, int count) {
+  for (int i = 0; i < count; i++) {
+    digitalWrite(ledPin, HIGH);   // LED on
+    delay(delayTime / 2);         // Half blink time
+    digitalWrite(ledPin, LOW);    // LED off
+    delay(delayTime / 2);         // Other half
+  }
+}
+
+void loop() {
+  blinkLED(fastDelay, blinkCount);  // Fast blinks
+  delay(setSeparation);             // Delay before slow blinks
+  blinkLED(slowDelay, blinkCount);  // Slow blinks
+  delay(setSeparation);             // Delay before next cycle
+}
